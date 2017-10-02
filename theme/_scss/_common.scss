@@ -1,0 +1,139 @@
+// Common SASS among all lessons
+// structure, typograhy, etc.
+
+
+// remove white gap on bottom of short pages
+
+html {
+  font-size: 16px;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: #eee;
+  background: url("../img/background-texture.jpg");
+  // longhand so background-img won't be outspecified
+  overflow-x: hidden;
+  color: $base-text-color;
+  font-family: $base-font-family;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+// LINKS
+a, a:active, a:visited {
+	color: $base-link-color;
+}
+
+
+// HEADERS
+h1, h2, h3, h4, h5, h6 {
+	font-family: $base-font-family;
+	font-weight: 300;
+	line-height: 1.1;
+	margin: 0;
+	padding: .5em 0;
+
+	// no top padding if first child or following another header
+	&:first-child,
+	&+h1, &+h2, &+h3, &+h4, &+h5, &+h6 {
+		padding-top: 0;
+	}
+
+}
+// h1 is used for the page title
+h1 {
+  font-size: 2.25em;
+  font-weight: 400;
+}
+// h2 is used for the page sub head
+h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+// h3 is used for the module title
+// module title padding adjusted in _navbar
+h3 {
+  font-size: 1.2em;
+
+  @include media($large-desktop) {
+    font-size: 1.35em;
+  }
+}
+// h4 used for green text in body
+h4 {
+  font-size: 1em;
+  color: $primary-color;
+}
+h5 {
+  font-size: 1.125em;
+}
+h6 {
+  font-size: 1;
+}
+
+p {
+  margin: 0 0 .75em 0;
+}
+
+// INVERTED OPTION
+// white text over image or whatever
+.invert {
+  h1,h2,h3,h4,h5,p,ul,ol,dl,div, a {
+		color: #fff;
+	}
+}
+
+// basics for the article
+article {
+  font-size: 1rem;
+
+  @include media($tablet) {
+    font-size: 1.15rem;
+  }
+
+  @include media($large-desktop) {
+    font-size: 1.35rem;
+  }
+
+  h1 {
+    padding: 0;
+  }
+
+  hr {
+    margin: 1em 0 1.5em;
+    border-top: 3px solid $primary-color;
+  }
+
+  h2 {
+    padding-top: 0;
+  }
+
+  h4 {
+    padding-bottom: 0;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 .75em 0;
+  }
+
+  img {
+    margin-bottom: .5em;
+  }
+
+  .subTitle {
+    padding-bottom: .5em;
+  }
+
+  ol ul, ul ol, ul ul, ol ol {
+    margin-bottom: .25em;
+  }
+}
+
+section {
+  @include media($large-desktop) {
+    font-size: 1.35rem;
+  }
+}

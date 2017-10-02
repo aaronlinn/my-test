@@ -1,0 +1,30 @@
+// theme partial
+[class^="origin"] {
+  background: none;
+}
+
+@include media($desktop) {
+  .origin-0 {
+    background: url("../img/Core-1.png") no-repeat 100% 50%;
+    z-index: 0;
+  }
+
+  .origin-1 {
+    background: url("../img/Core-2.png") no-repeat 100% 50%;
+    z-index: 0;
+  }
+
+  .origin-2 {
+    background: url("../img/Core-3.png") no-repeat 100% 50%;
+    z-index: 0;
+  }
+}
+
+// video wrapper
+video {
+  background: $secondary-color;
+}
+
+.multimedia::after {
+  background: $primary-color;
+}

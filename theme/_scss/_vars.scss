@@ -1,0 +1,31 @@
+// grid options
+$grid-columns: 12;
+$max-width: em(1500);
+
+// basic breakpoints
+$mobile: em(500);
+$tablet: em(700);   // phones landscape, tablets portrait, etc
+$desktop: em(900);	// tablets landscape and larger
+$large-desktop: em(1600);	// high res monitors
+
+// notification colors
+$notification: #00943b !default;
+$alert: #ff9400 !default;
+$error: #fb371b !default;
+
+// custom fonts
+// keep load times down by only importing font styles in use
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+// MIXINS
+@mixin roundBtn($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+}
+
+@mixin forceHeight($height) {
+  min-height: $height;
+  max-height: $height;
+  height: $height;
+}

@@ -1,0 +1,18 @@
+<nav>
+    <div class="previous"><button id="nav-back" aria-label="Previous"><i class="fa fa-chevron-left"></i></button></div>
+    <div class="next"><button id="nav-fwd" class="advance" aria-label="Next"><i class="fa fa-chevron-right"></i></button></div>
+</nav>
+</div>
+<!-- /wrap -->
+
+<!-- page foot/scripts partial will go here -->
+<script src="{{ themePath }}/js/main.js"></script>
+<script src="{{ themePath }}/js/underscore.js"></script>
+
+{% if template.has_javascript_file %}
+<!-- specific layout script -->
+<script src="{{ templatePath }}/template.js"></script>
+{% endif %}
+
+</body>
+</html>

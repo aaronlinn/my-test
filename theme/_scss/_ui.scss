@@ -1,0 +1,192 @@
+// ui elements - buttons, tabs, etc
+
+.wrap {
+  // make sure we're taking up the browser height
+  min-height: 100vh;
+  @include display(flex);
+  @include flex-direction(column);
+  align-items: stretch;
+}
+
+header, main, nav  {
+  flex: 1;
+}
+
+header, nav {
+  background-color: $nav-background;
+  z-index: 10;
+
+  @include display(flex);
+  @include flex-direction(row);
+  align-items: center;
+
+  & > div {
+    flex: 1;
+  }
+
+  button {
+    font-size: 1.25em;
+    background: none;
+    border: none;
+  }
+}
+
+header {
+  @include forceHeight(80px);
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 10px solid transparent;
+  -webkit-border-image: url(../img/Pattern-Bar.gif) 30 round; /* Safari 3.1-5 */
+  -o-border-image: url(../img/Pattern-Bar.gif) 30 round; /* Opera 11-12.1 */
+  border-image: url(../img/Pattern-Bar.gif) 30 round;
+
+  .head-right {
+    min-width: 50%;
+
+    @include media($tablet) {
+      min-width: 120px;
+      max-width: 120px;
+    }
+  }
+  .head-title {
+    display: none;
+    order: 1;
+    text-align: left;
+    background: $title-swatch;
+    height: 70px;
+    padding-left: 130px;
+
+    span {
+      color: $primary-color;
+      border-right: 1px solid $secondary-color;
+      margin-right: .3em;
+      padding-right: .5em;
+    }
+
+    h3 {
+      font-weight: 400;
+    }
+
+    @include media($tablet) {
+      @include display(flex);
+      @include align-items(center);
+      border-left: 2px solid $secondary-color;
+    }
+  }
+  .head-right {
+    order: 2;
+    text-align: right;
+
+    img {
+      height: 42px;
+      margin-top: 8px;
+      margin-right: 14px;
+    }
+  }
+
+  button {
+    width: 45px;
+    transition: all 0.4s;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+nav {
+  @include forceHeight(42px);
+  border-top: 2px solid transparent;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 0;
+  -webkit-border-image: url(../img/Pattern-Bar.gif) 30 round; /* Safari 3.1-5 */
+  -o-border-image: url(../img/Pattern-Bar.gif) 30 round; /* Opera 11-12.1 */
+  border-image: url(../img/Pattern-Bar.gif) 30 round;
+
+  .previous {
+    height: 100%;
+    content-align: left;
+  }
+  .next {
+    height: 100%;
+    text-align: right;
+  }
+
+  button {
+    width: 2em;
+    height: 100%;
+    transition: all 0.5s;
+
+    &:hover {
+      width: 2.5em;
+      color: #ffffff;
+      background-color: $primary-color;
+    }
+
+    &#nav-back {
+      text-align: left;
+    }
+
+    &#nav-fwd {
+      text-align: right;
+    }
+  }
+}
+
+main {
+  width: 100vw;
+  padding: 1rem 2rem;
+
+  // in case ie is feeling dumb
+  display: block;
+
+  @include media($tablet) {
+    padding: 4rem 5rem;
+  }
+}
+
+section {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  &::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+
+#finish.btn {
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  background-color: $primary-color;
+  display: inline-block;
+  font-family: 'Lato';
+  letter-spacing: 2px;
+  line-height: 1.2;
+  min-width: 10.9375em;
+  margin-top: 75px;
+  opacity: 1;
+  padding: .75em 1.75em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.15s ease-out;
+  -moz-transition: background-color 0.15s ease-out;
+  transition: background-color 0.15s ease-out;
+  &:hover {
+    background-color: #ffffff;
+    border: 1px solid #006342;
+    color: #006342;
+    -webkit-transition: background-color 0.15s ease-out;
+    -moz-transition: background-color 0.15s ease-out;
+    transition: background-color 0.15s ease-out;
+  }
+}
+
+.align-right #finish.btn {
+  float: right;
+}

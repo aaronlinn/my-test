@@ -1,0 +1,99 @@
+// Navbar styling to override LMS default injected styling
+// Read LMS documentation on http://mindspacelearning.com/docs/theming/
+
+h3 {
+  padding: 0;
+}
+
+.help-info {
+  position: absolute;
+  top: 3.5em;
+  left: 3em;
+  z-index: 11;
+  background-color: $primary-color;
+  height: auto;
+  width: em(220);
+  padding: 1.125em 1em;
+  display: none;
+  text-align: center;
+  @include transition(all .5s linear);
+
+  @include media($mobile) {
+    top: em(5);
+    left: em(100);
+  }
+
+  &::before {
+    left: em(12);
+    top: -22px;
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    border-bottom-color: $primary-color;
+    border-width: 11px;
+
+    @include media($mobile) {
+      left: -22px;
+      top: em(15);
+      border-bottom-color: transparent;
+      border-right-color: $primary-color;
+    }
+  }
+
+  &.active {
+    display: block;
+    box-shadow: 3px 3px 1px rgba(0,0,0,.25);
+  }
+
+  &.flagged {
+    &>img {
+      opacity:1 !important;
+    }
+  }
+
+  h5 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-bottom: .4125em;
+  }
+
+  button {
+    background-color: #ffffff;
+    border-radius: 0;
+    width: initial;
+    height: initial;
+    text-indent: 0;
+    color: $primary-color;
+    border: none;
+    font-size: em(12);
+    padding: em(6) em(10);
+  }
+
+  p {
+    color: #ffffff;
+    font-size: .875rem;
+    line-height: 1.4;
+    margin: 0 0 1rem 0;
+  }
+
+  a {
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: .875rem;
+    font-family: 'Gentium';
+    margin: .2em em(20);
+    text-decoration: underline;
+  }
+}
+
+
+
+// inverted variant - all white text on image
+// class goes on body, .wrap, .navbar, or .content
+.invert {
+	&.navbar *, .navbar * {
+		color: #fff !important;
+	}
+}
